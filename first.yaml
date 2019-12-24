@@ -1,7 +1,6 @@
----
--name:	test ansible from git
-hosts: all
-  sudo: yes
+- name:	test ansible from git
+  hosts: all
+  become: yes
   tasks: 
     - name: install apache2
       apt:
