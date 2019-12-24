@@ -1,0 +1,14 @@
+---
+-name:	test ansible from git
+hosts: all
+  sudo: yes
+  tasks: 
+    - name: install apache2
+      apt:
+        name=apache2 state=present
+      notify:
+        - restart apache2
+   
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted
