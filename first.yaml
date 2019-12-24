@@ -1,6 +1,7 @@
 - name:	test ansible from git
   hosts: all
   become: yes
+  remote_user: root
   tasks: 
     - name: install apache2
       apt:
